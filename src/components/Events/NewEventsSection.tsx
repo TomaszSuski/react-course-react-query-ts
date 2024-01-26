@@ -12,7 +12,7 @@ export interface ErrorElement extends Error {
 
 export default function NewEventsSection() {
   const [data, setData] = useState<Event[]>();
-  const [error, setError] = useState();
+  const [error, setError] = useState<ErrorElement | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
