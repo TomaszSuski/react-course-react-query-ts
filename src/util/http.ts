@@ -1,4 +1,11 @@
-import { ErrorElement } from "../components/Events/NewEventsSection";
+interface Errorinfo extends Object {
+    message: string;
+  }
+
+export interface ErrorElement extends Error {
+    info?: Errorinfo;
+    code?: number;
+  }
 
 export async function fetchEvents() {
   const response = await fetch("http://localhost:3000/events");
